@@ -44,6 +44,12 @@ public class MontagneMain {
 			for (Sommet sommet : sommets) {
 			    Console.message(sommet.description());
 			}
+			
+			Collections.sort((List<Sommet>) sommets, new ComparateurChaineDeMontagne());
+			Console.titre("Mes Sommets triés par chaine de Montagne");
+			for (Sommet sommet : sommets) {
+			    Console.message(sommet.description());
+			}
 		
 	}
 }
