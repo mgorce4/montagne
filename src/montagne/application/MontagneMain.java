@@ -2,6 +2,8 @@ package montagne.application;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 
 import montagne.ihm.Console;
 import montagne.metier.ChaineDeMontagne;
@@ -24,6 +26,18 @@ public class MontagneMain {
 			for (Sommet sommet:sommets) {
 				Console.message(sommet.description());
 			}
+			
+			Collections.sort((List<Sommet>) sommets, new ComparateurAltitude());
+			Console.titre("Mes Sommets triés par altitude décroissante");
+			for (int i = sommets.size() - 1; i >= 0; i--) {
+	            Console.message(((ArrayList<Sommet>) sommets).get(i).description());
+	        }
+			
+			Collections.sort((List<Sommet>) sommets, new ComparateurAltitude());
+			Console.titre("Mes Sommets trié par altitude croissante");
+			for (Sommet sommet : sommets) {
+		        Console.message(sommet.description());
+		    }
 		
 	}
 }
