@@ -38,6 +38,12 @@ public class MontagneMain {
 			for (Sommet sommet : sommets) {
 		        Console.message(sommet.description());
 		    }
+			
+			Collections.sort((List<Sommet>) sommets, new ComparateurNom());
+			Console.titre("Mes Sommets triés par nom (ordre alpha)");
+			for (Sommet sommet : sommets) {
+			    Console.message(sommet.description());
+			}
 		
 	}
 }
