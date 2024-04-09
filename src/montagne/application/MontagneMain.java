@@ -50,6 +50,12 @@ public class MontagneMain {
 			for (Sommet sommet : sommets) {
 			    Console.message(sommet.description());
 			}
+			
+			Collections.sort((List<Sommet>) sommets, new ComparateurChaineAltitude());
+			Console.titre("Mes Sommets triés par chaine et altitude décroissante");
+			for (Sommet sommet : sommets) {
+			    Console.message(sommet.description());
+			}
 		
 	}
 }
